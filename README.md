@@ -41,17 +41,17 @@ sudo apt install python3 python3-pip -y
 pip3 install flask
 ```
 
-### 2. Download the script
+### 2. Clone The codefiles
 
 ```bash
-wget https://raw.githubusercontent.com/pranavwebman/family-intranet/main/family_intranet.py
+git clone https://github.com/pranavwebman/Advanced-Home-Intranet-System
 # or create the file manually
 ```
 
 ### 3. Run the application
 
 ```bash
-python3 family_intranet.py
+python3 app.py
 ```
 
 You will see:
