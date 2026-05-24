@@ -129,8 +129,8 @@ def insert_default_users(conn):
     if c.fetchone()[0] == 0:
         users = [
             ('son_admin', hashlib.sha256('admin123'.encode()).hexdigest(), 'Admin (Son)', 'admin', 'son@family.com', 100),
-            ('harikrishnan', hashlib.sha256('father123'.encode()).hexdigest(), 'Harikrishnan (Father)', 'father', 'father@family.com', 50),
-            ('sreeja', hashlib.sha256('mother123'.encode()).hexdigest(), 'Sreeja (Mother)', 'mother', 'mother@family.com', 50)
+            ('father', hashlib.sha256('father123'.encode()).hexdigest(), 'Father (Father)', 'father', 'father@family.com', 50),
+            ('mother', hashlib.sha256('mother123'.encode()).hexdigest(), 'Mother (Mother)', 'mother', 'mother@family.com', 50)
         ]
         for u in users:
             c.execute('INSERT INTO users (username, password_hash, full_name, role, email, points) VALUES (?,?,?,?,?,?)', u)
@@ -624,5 +624,5 @@ if __name__ == '__main__':
     except:
         ip = "127.0.0.1"
     print(f"✅ Server running at: http://{ip}:8000")
-    print("🔑 Logins: son_admin/admin123 | harikrishnan/father123 | sreeja/mother123")
+    print("🔑 Logins: son_admin/admin123 | father/father123 | mother/mother123")
     app.run(host='0.0.0.0', port=8000, debug=True)
